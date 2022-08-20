@@ -1,0 +1,161 @@
+:root {
+  --modal-duration: 1s;
+  --modal-color: #428bca;
+}
+
+body {
+  position: relative;
+}
+h2 {
+  text-align: center;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.avatar {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
+
+.alert {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0.7rem;
+  position: fixed;
+  width: 100%;
+  top: 3rem;
+  left: 1rem;
+}
+
+.alert-success {
+  background-color: lightgreen;
+  color: green;
+}
+.alert-danger {
+  background-color: lightpink;
+  color: red;
+}
+
+button {
+  cursor: pointer;
+  transition: ease-in-out 0.5s;
+  border: transparent;
+  color: white;
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.add-new-header {
+  float: right;
+  padding: 0.5rem;
+  margin: 3rem 0;
+}
+
+#add-new-btn {
+  background-color: rgb(48, 5, 87);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+#add-new-btn:hover {
+  background-color: rgb(25, 3, 45);
+}
+
+.edit-btn {
+  background-color: green;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+}
+.delete-btn {
+  background-color: red;
+  padding: 0.5rem 1rem;
+}
+
+.edit-btn:hover {
+  background-color: darkgreen;
+}
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  margin: 10% auto;
+  width: 20%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+}
+.modal-header h2 {
+  margin: 0;
+}
+.modal-header {
+  background: var(--modal-color);
+  padding: 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.modal-body {
+  padding: 10px 20px;
+  background: #fff;
+}
+.modal-body form {
+  text-align: center;
+}
+#submit-btn {
+  border: none;
+  padding: 10px;
+  background: var(--modal-color);
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+.close {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+  color: #fff;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
